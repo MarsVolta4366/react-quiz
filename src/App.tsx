@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { fetchQuizQuestions, Difficulty, QuestionState } from './API'
 import QuestionCard from './components/QuestionCard'
 
-// At 41min https://www.youtube.com/watch?v=F2JCjVSZlG0
+// At 1hr in video, rest of video is styling: https://www.youtube.com/watch?v=F2JCjVSZlG0
 
 const TOTAL_QUESTIONS = 10
 
@@ -75,7 +75,7 @@ const App = () => {
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startTrivia}>Start</button>
       ) : null}
-      {!gameOver && <p className="score">Score:</p>}
+      {!gameOver && <p className="score">Score: {score}</p>}
       {loading && <p>Loading Questions...</p>}
       {!loading && !gameOver && (
         <QuestionCard
